@@ -8,14 +8,26 @@ function fahrenheitToCelsius(fahrenheit) {
 
 function onToFahrenheintClick(event) {
   var celsius = parseFloat(document.getElementById('celsius').value);
-  var result = document.getElementById('c_to_f_result');
-  result.innerHTML = celsiusToFahrenheit(celsius);
+  var resultElement = document.getElementById('c_to_f_result');
+  var result = celsiusToFahrenheit(celsius)
+
+  if(isNaN(result)){
+    result = ''
+  }
+
+  resultElement.innerHTML = result;
 }
 
 function onToCelsiusClick(event) {
   var fahrenheit = parseFloat(document.getElementById('fahrenheit').value);
-  var result = document.getElementById('f_to_c_result');
-  result.innerHTML = fahrenheitToCelsius(fahrenheit);
+  var resultElement = document.getElementById('f_to_c_result');
+  var result = fahrenheitToCelsius(fahrenheit)
+
+  if(isNaN(result)){
+    result = ''
+  }
+
+  resultElement.innerHTML = result;
 }
 
 function bindClicks() {

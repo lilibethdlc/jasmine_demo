@@ -58,6 +58,26 @@ describe('Celsius/Fahrenheit', function() {
         button.click();
         expect(result.innerHTML).toEqual('50');
       });
+
+      describe('when given invalid input', function(){
+        it('does not set the calculation result if given letters', function() {
+          input.value = 'abc';
+          button.click();
+          expect(result.innerHTML).toEqual('');
+        });
+
+        it('does not set the calculation result if given letters mixed with numbers', function() {
+          input.value = 'abc123';
+          button.click();
+          expect(result.innerHTML).toEqual('');
+        });
+
+        it('does not set the calculation result if given an empty input', function() {
+          input.value = '';
+          button.click();
+          expect(result.innerHTML).toEqual('');
+        });
+      });
     });
 
     describe('onToCelsiusClick', function() {
@@ -79,6 +99,26 @@ describe('Celsius/Fahrenheit', function() {
         input.value = '68';
         button.click();
         expect(result.innerHTML).toEqual('20');
+      });
+
+      describe('when given invalid input', function(){
+        it('does not set the calculation result if given letters', function() {
+          input.value = 'abc';
+          button.click();
+          expect(result.innerHTML).toEqual('');
+        });
+
+        it('does not set the calculation result if given letters mixed with numbers', function() {
+          input.value = 'abc123';
+          button.click();
+          expect(result.innerHTML).toEqual('');
+        });
+
+        it('does not set the calculation result if given an empty input', function() {
+          input.value = '';
+          button.click();
+          expect(result.innerHTML).toEqual('');
+        });
       });
     });
   });
